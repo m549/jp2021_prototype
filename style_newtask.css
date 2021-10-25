@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 100px;
+}
+
+
+
+/*** 戻る / 完了　ボタン ***/
+
+.back_and_finish {
+    font-size: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.back_and_finish a {
+    color: #00EA90;
+}
+
+
+
+/*** タイトル「タスク新規作成」 ***/
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    line-height: 150%;
+}
+
+.main {
+    margin: 50px;
+    margin-top: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+}

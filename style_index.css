@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+a {
+    text-decoration: none;
+    color: #00EA90;
+}
+
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.main {
+    font-size: 100px;
+    margin: 50px;
+    margin-top: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+
+/*** 完了ボタン ***/
+
+header{
+    font-size: 50px;
+    text-align: right;
+}
+
+
+
+/*** タイトル「今日のタスクを選んでください」 ***/
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    line-height: 150%;
+}
+
+
+
+/*** タスク一覧 ***/
+
+.box {
+    width: 100%;
+    margin: 80px 0;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+.box label {
+    color: black;
+    position: absolute;
+    z-index: 10;
+    padding-left: 150px;
+    cursor: pointer;
+}
+.box input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.box input:checked ~ .check {
+    border-color: #00EA90;
+    box-shadow: 0px 0px 0px 50px #00EA90 inset;
+}
+.box input:checked ~ .check::after {
+    opacity: 1;
+    transform: scale(1);
+}
+.box .check {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 100px;
+    background-color: #FFF;
+    border: 10px solid #00EA90;
+    box-shadow: 0px 0px 0px 0px #00EA90 inset;
+    transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+.box .check::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 4;
+    position: absolute;
+    transform: scale(0);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-delay: 0.2s !important;
+    transition: all 0.25s cubic-bezier(0, 1.05, 0.72, 1.07);
+}

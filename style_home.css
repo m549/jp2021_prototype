@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
+a {
+    text-decoration: none;
+    color: #00EA90;
+}
+
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.main {
+    font-size: 100px;
+    margin: 50px;
+    margin-top: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.5;
+    margin-bottom: 300px;
+}
+
+
+
+/*** タイトル「今日のタスク」 ***/
+
+h1 {
+    font-size: 100px;
+    text-align: center;
+    line-height: 150%;
+}
+
+
+
+progress {
+    margin-top: -50px;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 110px;
+    /*-webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;*/
+    border-radius: 55px;
+}
+::-webkit-progress-bar {
+    background-color: #dfdfdf;
+    border-radius: 55px;
+  }
+::-moz-progress-bar {
+    background-color: red;
+    border-radius: 55px;
+}
+::-webkit-progress-value {
+    background-color: #00EA90;
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
+}
+
+
+/*** タスク一覧 ***/
+
+.box {
+    width: 100%;
+    margin: 80px 0;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+.box label {
+    color: black;
+    position: absolute;
+    z-index: 10;
+    padding-left: 150px;
+    cursor: pointer;
+}
+.box input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.box input:checked ~ .check {
+    border-color: #dfdfdf;
+    box-shadow: 0px 0px 0px 50px #dfdfdf inset;
+}
+.box input:checked ~ .check::after {
+    opacity: 1;
+    transform: scale(1);
+}
+.box .check {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 100px;
+    background-color: #FFF;
+    border: 10px solid #00EA90;
+    box-shadow: 0px 0px 0px 0px #00EA90 inset;
+    transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+.box .check::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 4;
+    position: absolute;
+    transform: scale(0);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-delay: 0.2s !important;
+    transition: all 0.25s cubic-bezier(0, 1.05, 0.72, 1.07);
+}
+
+.box input:checked ~ .complete {
+    color: #dfdfdf;
+}
+
+
+
+/*footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #00EA90;
+    left: 0px;
+    z-index: 999;
+}*/
+
+#under-menu{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    font-size: 0;
+    z-index: 999;
+    left: 0px;
+    right: 0px;
+    height: 200px;
+    background: #fff;
+}
+
+#under-menu ul {
+    padding-left: 0px;
+    text-align: center;
+    line-height: 200px;
+}
+  
+#under-menu li{
+    display: inline-block;
+    width: 50%;
+    font-size: 80px;
+}
+
+#under-menu li.current {
+    background-color: #00EA90;
+}
+
+#under-menu li.current a {
+    color: #fff;
+}
+  
+#under-menu li a{
+    color: #00EA90;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
